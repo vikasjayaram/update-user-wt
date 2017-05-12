@@ -13,9 +13,20 @@ wt init
 wt profile ls
 ```
 
+### Setup
+
+Change the following values in webtask.js
+
+```sh
+const JWKS_URI = 'https://{tenant}.auth0.com/.well-known/jwks.json';
+const AUDIENCE = '{CLIENT_ID_OR_URN}';
+const ISSUER = 'https://{tenant}.auth0.com/';
+
+```
+
 ### Initialization
 ```sh
-$ wt create updateuserinfo.js --name uu
+$ wt create webtask.js --name uu
     -s CLIENT_ID=YOUR_NON_INTERACTIVE_AUTH0_CLIENT_ID
     -s CLIENT_SECRET=YOUR_NON_INTERACTIVE_AUTHO_CLIENT_SECRET
     -s ACCOUNT_NAME=YOUR_AUTH0_TENANT_NAME
